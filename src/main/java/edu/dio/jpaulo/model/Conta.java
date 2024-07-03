@@ -1,13 +1,21 @@
 package edu.dio.jpaulo.model;
 
+import lombok.Getter;
+
 public abstract class Conta implements IConta {
 	
 	private static final int AGENCIA_PADRAO = 1;
 	private static int SEQUENCIAL = 1;
 
+	@Getter
 	protected int agencia;
+	
+	@Getter
 	protected int numero;
+	
+	@Getter
 	protected double saldo;
+	
 	protected Cliente cliente;
 
 	public Conta(Cliente cliente) {
@@ -30,18 +38,6 @@ public abstract class Conta implements IConta {
 	public void transferir(double valor, IConta contaDestino) {
 		this.sacar(valor);
 		contaDestino.depositar(valor);
-	}
-
-	public int getAgencia() {
-		return agencia;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public double getSaldo() {
-		return saldo;
 	}
 
 	protected void imprimirInfosComuns() {
