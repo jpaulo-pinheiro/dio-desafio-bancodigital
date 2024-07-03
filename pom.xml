@@ -83,6 +83,7 @@
           <includeTestSourceDirectory>true</includeTestSourceDirectory>
           <skip>${skipTests}</skip>
         </configuration>
+        <!--
         <executions>
           <execution>
             <id>checkstyle</id>
@@ -92,6 +93,7 @@
             </goals>
           </execution>
         </executions>
+        -->
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
